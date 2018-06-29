@@ -8,7 +8,6 @@ import numpy as np
 
 
 class TetrisAI(object):
-
     def nextMove(self):
         t1 = datetime.now()
         if BOARD_DATA.currentShape == Shape.shapeNone:
@@ -122,7 +121,7 @@ class TetrisAI(object):
         maxHeight = max(roofY) - fullLines
         # print(datetime.now() - t1)
 
-        roofDy = [roofY[i] - roofY[i+1] for i in range(len(roofY) - 1)]
+        roofDy = [roofY[i] - roofY[i + 1] for i in range(len(roofY) - 1)]
 
         if len(roofY) <= 0:
             stdY = 0
@@ -138,10 +137,9 @@ class TetrisAI(object):
         # print(datetime.now() - t1)
 
         score = fullLines * 1.8 - vHoles * 1.0 - vBlocks * 0.5 - maxHeight ** 1.5 * 0.02 \
-            - stdY * 0.0 - stdDY * 0.01 - absDy * 0.2 - maxDy * 0.3
+                - stdY * 0.0 - stdDY * 0.01 - absDy * 0.2 - maxDy * 0.3
         # print(score, fullLines, vHoles, vBlocks, maxHeight, stdY, stdDY, absDy, roofY, d0, x0, d1, x1)
         return score
 
 
 TETRIS_AI = TetrisAI()
-

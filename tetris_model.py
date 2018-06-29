@@ -3,6 +3,7 @@
 
 import random
 
+
 class Shape(object):
     shapeNone = 0
     shapeI = 1

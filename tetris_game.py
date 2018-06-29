@@ -11,6 +11,7 @@ from tetris_ai import TETRIS_AI
 
 # TETRIS_AI = None
 
+
 class Tetris(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -116,11 +117,11 @@ class Tetris(QMainWindow):
             return
 
         key = event.key()
-        
+
         if key == Qt.Key_P:
             self.pause()
             return
-            
+
         if self.isPaused:
             return
         elif key == Qt.Key_Left:
@@ -208,7 +209,7 @@ class Board(QFrame):
 
         # Draw a border
         painter.setPen(QColor(0x777777))
-        painter.drawLine(self.width()-1, 0, self.width()-1, self.height())
+        painter.drawLine(self.width() - 1, 0, self.width() - 1, self.height())
         painter.setPen(QColor(0xCCCCCC))
         painter.drawLine(self.width(), 0, self.width(), self.height())
 
